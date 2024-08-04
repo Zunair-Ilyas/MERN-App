@@ -1,0 +1,48 @@
+.appointment-form{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form input{
+    background-color: #d3d3d3;
+    padding: 16px;
+    border-radius: 12px;
+    color: black;
+}
+.form input::placeholder{
+    color: #777777;
+}
+.position{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.address-appointment textarea{
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 12px;
+}
+.book-button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+}
+.book-button:active{
+    background-color: #ff7a7a;
+}
+.success-message{
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    padding: 10px;
+    color: darkgreen;
+    font-weight: normal;
+}

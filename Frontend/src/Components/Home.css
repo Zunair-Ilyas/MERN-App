@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.bookings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 120px;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 60px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 320px;
+    padding: 20px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.box1:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    width: 60px;
+    height: auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.box1 .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200%;
+    margin-top: 20px;
+    /*border: 1px solid black;*/
+}
+
+.detail .number {
+    color: gray;
+    margin-bottom: 10px;
+    /*border: 1px solid black;*/
+}
+
+.detail .see-more {
+    color: rebeccapurple;
+    font-style: italic;
+    cursor: pointer;
+    transition: color 0.3s;
+    /*border: 1px solid black;*/
+}
+
+.see-more:hover {
+    color: #a974e1;
+}
+
+.search-bar {
+    width: 400px;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s, width 0.3s;
+}
+
+.search-bar:hover {
+    width: 410px;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+    font-size: 16px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .box1 {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .search-bar {
+        width: 80%;
+    }
+
+    .search-bar:hover {
+        width: 85%;
+    }
+}
+.empty-home{
+    font-size: 32px;
+    font-family: Lexend, sans-serif;
+    padding-top: 50px;
+    text-align: center;
+}

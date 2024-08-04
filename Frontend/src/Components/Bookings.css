@@ -1,0 +1,64 @@
+.booking-title{
+    font-size: 56px;
+    font-family: Lexend, sans-serif;
+    text-align: center;
+    margin: 20px auto;
+}
+.bookings-page-container{
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    border: 1px solid #d3d3d3;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-radius: 20px;
+
+}
+.booking-card{
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 8px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 2px;
+    width: 75%;
+}
+.booking-time{
+    font-size: 20px;
+}
+.booking-doctor{
+    font-size: 24px;
+    font-weight: bold;
+}
+.booking-specialization{
+    font-size: 20px;
+    color: gray;
+}
+.booking-address{
+    font-size: 16px;
+}
+.booking-patient{
+    font-size: 20px;
+}
+.cancel-button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.cancel-button:active{
+    background-color: #ff7a7a;
+}
+.action{
+    padding: 32px;
+}
+.empty-bookings-para{
+    font-size: 36px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    font-style: italic;
+    color: #333333;
+    margin: 50px auto;
+}

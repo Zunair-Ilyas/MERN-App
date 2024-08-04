@@ -1,0 +1,24 @@
+.para{
+    text-align: center;
+    font-style: italic;
+    color: #616161;
+    letter-spacing: 2px;
+}
+.logout-button{
+    width: 250px;
+    height: 56px;
+    background-color: #ff5a5a;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
