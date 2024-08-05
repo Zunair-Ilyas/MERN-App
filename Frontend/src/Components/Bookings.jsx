@@ -9,13 +9,18 @@ const Bookings = () => {
 
     const getData = async () => {
         try {
-            const Data = await axios.get('http://localhost:3010/bookings', {
+            const { data } = await axios.get('http://localhost:3010/bookings', {
                 params: {
                     email: localStorage.getItem('userEmail')
                 }
             });
-            setBookingData(Data.data);
-            Data.data.length === 0 ? setBookings(true) : setBookings(false);
+            const now = new Date().getTime();
+            const validBookings = data.filter(booking => {
+                const bookingTime = new Date(`${booking.appointmentDate}T${booking.appointmentTime}`).getTime();
+                return bookingTime > now;
+            });
+            setBookingData(validBookings);
+            setBookings(validBookings.length === 0);
         } catch (e) {
             console.log(e);
         }

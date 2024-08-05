@@ -1,48 +1,136 @@
-.appointment-form{
+.appointment-form {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 50px auto;
 }
-.form{
+
+.form {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
+    max-width: 600px;
 }
-.form input{
+
+.form input {
     background-color: #d3d3d3;
     padding: 16px;
     border-radius: 12px;
     color: black;
 }
-.form input::placeholder{
+
+.form input::placeholder {
     color: #777777;
 }
-.position{
+
+.position {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.address-appointment textarea{
+
+.address-appointment textarea {
     border: 2px solid #d3d3d3;
     border-radius: 10px;
     padding: 12px;
+    resize: vertical; /* Allow vertical resizing */
 }
-.book-button{
+
+.book-button {
     background-color: #ff5a5a;
     color: white;
     padding: 16px;
     border-radius: 16px;
+    border: none;
+    cursor: pointer;
 }
-.book-button:active{
+
+.book-button:active {
     background-color: #ff7a7a;
 }
-.success-message{
+
+.success-message {
     font-size: 16px;
     font-family: Poppins, sans-serif;
     text-align: center;
     padding: 10px;
     color: darkgreen;
     font-weight: normal;
+}
+
+p.redirect-to-home {
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    padding: 10px;
+    color: #ff5a5a;
+    text-decoration: underline;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+p.redirect-to-home:active {
+    color: #ff7a7a;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .appointment-form {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .form {
+        gap: 12px;
+    }
+
+    .form input, .address-appointment textarea {
+        padding: 12px;
+    }
+
+    .book-button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .success-message, p.redirect-to-home {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        gap: 8px;
+        font-size: 8px;
+    }
+
+    .gender-input-appointment{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: auto;
+        gap: 10px;
+    }
+
+    .gender-input-appointment div{
+        display: flex;
+        align-items: center;
+    }
+
+    .form input, .address-appointment textarea {
+        padding: 10px;
+    }
+
+    .book-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .success-message, p.redirect-to-home {
+        font-size: 12px;
+        padding: 6px;
+    }
 }

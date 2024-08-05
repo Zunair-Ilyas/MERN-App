@@ -1,0 +1,17 @@
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Lexend, sans-serif;
+    background-color: lightgray;
+}
+p.error-notfound{
+    font-size: 56px;
+}
+p.not-found{
+    font-size: 32px;
+    letter-spacing: 3px;
+}

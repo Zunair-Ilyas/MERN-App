@@ -1,0 +1,38 @@
+.welcome-page body{
+    background-color: #ffe6e6;
+}
+.welcome-page{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: auto;
+}
+.welcome{
+    font-size: 56px;
+    font-family: Lexend, sans-serif;
+}
+.welcome-note{
+    font-size: 20px;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 2px;
+}
+.button-container{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+.button-container button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    width: 300px;
+}
+.button-container button:active{
+    background-color: #ff7a7a;
+}

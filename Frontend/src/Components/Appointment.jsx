@@ -3,14 +3,15 @@ import Navbar from "./Navbar.jsx";
 import { UserContext } from "./Context.jsx";
 import './Appointment.css';
 import axios from 'axios';
-import { useLocation } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const Appointment = () => {
     const { user } = useContext(UserContext);
     const location = useLocation();
     const data = location.state;
-    const [message, setMessage] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate()
     const [patient, setPatient] = useState({
         firstName: '',
         lastName: '',
@@ -28,6 +29,44 @@ const Appointment = () => {
         doctor_contact: data.contactNumber
     });
 
+    const parseAvailableHours = (availableHours) => {
+        // Split the input string into start and end times
+        const [start, end] = availableHours.split(' to ');
+
+        const formatTime = (time) => {
+            const [hourMinute, period] = time.split(' ');
+            if (!hourMinute || !period) {
+                throw new Error(`Invalid time format: ${time}`);
+            }
+
+            const [hour, minute] = hourMinute.split(':');
+            if (!hour) {
+                throw new Error(`Hour is missing in time format: ${time}`);
+            }
+
+            let hour24 = parseInt(hour, 10);
+            if (period === 'PM' && hour24 < 12) hour24 += 12;
+            if (period === 'AM' && hour24 === 12) hour24 = 0;
+
+            // Manually ensure hour and minute are two digits
+            const hourStr = hour24 < 10 ? '0' + hour24 : hour24;
+            const minuteStr = minute ? (minute.length === 1 ? '0' + minute : minute) : '00';
+
+            return `${hourStr}:${minuteStr}`;
+        };
+
+        return {
+            start: formatTime(start),
+            end: formatTime(end)
+        };
+    };
+
+// Example usage:
+    console.log(parseAvailableHours("2:25 PM to 3:25 PM")); // { start: '14:25', end: '15:25' }
+
+
+    const availableHours = parseAvailableHours(data.availableHours);
+
     const handleChange = (e) => {
         setPatient(prevState => ({
             ...prevState,
@@ -37,7 +76,7 @@ const Appointment = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true)
+        setLoading(true);
         try {
             const response = await axios.post(`http://localhost:3010/home/${data.specialization}/${data._id}/appointment`, patient);
             setPatient({
@@ -55,20 +94,24 @@ const Appointment = () => {
                 doctor_specialization: data.specialization,
                 doctor_name: `${data.firstName} ${data.lastName}`,
                 doctor_contact: data.contactNumber
-            })
-            setMessage('Appointment Booked Successfully')
-            console.log(response.data)
-            console.log(user)
+            });
+            setMessage('Appointment Booked Successfully');
+            console.log(response.data);
+            console.log(user);
         } catch (error) {
             console.error("There was an error creating the appointment!", error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
     useEffect(() => {
-        setMessage(null)
+        setMessage(null);
     }, []);
+
+    const handleRedirect = () => {
+        navigate('/home');
+    }
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -101,50 +144,44 @@ const Appointment = () => {
                             required
                         />
                     </div>
-                    {/*<div className='email-appointment position'>*/}
-                    {/*    <label htmlFor='email'>Email</label>*/}
-                    {/*    <input*/}
-                    {/*        type='email'*/}
-                    {/*        name='email'*/}
-                    {/*        placeholder='e.g: John@example.com'*/}
-                    {/*        id='email'*/}
-                    {/*        onChange={handleChange}*/}
-                    {/*        value={patient.email}*/}
-                    {/*        required*/}
-                    {/*    />*/}
-                    {/*</div>*/}
-                    <div>
+                    <div className='gender-input-appointment'>
                         <label>Gender:</label>
-                        <input
-                            type='radio'
-                            name='gender'
-                            id='male'
-                            onChange={handleChange}
-                            value='male'
-                            checked={patient.gender === 'male'}
-                            required
-                        />
-                        <label htmlFor='male'>Male</label>
-                        <input
-                            type='radio'
-                            name='gender'
-                            id='female'
-                            onChange={handleChange}
-                            value='female'
-                            checked={patient.gender === 'female'}
-                            required
-                        />
-                        <label htmlFor='female'>Female</label>
-                        <input
-                            type='radio'
-                            name='gender'
-                            id='other'
-                            onChange={handleChange}
-                            value='other'
-                            checked={patient.gender === 'other'}
-                            required
-                        />
-                        <label htmlFor='other'>Other</label>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                id='male'
+                                onChange={handleChange}
+                                value='male'
+                                checked={patient.gender === 'male'}
+                                required
+                            />
+                            <label htmlFor='male'>Male</label>
+                        </div>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                id='female'
+                                onChange={handleChange}
+                                value='female'
+                                checked={patient.gender === 'female'}
+                                required
+                            />
+                            <label htmlFor='female'>Female</label>
+                        </div>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                id='other'
+                                onChange={handleChange}
+                                value='other'
+                                checked={patient.gender === 'other'}
+                                required
+                            />
+                            <label htmlFor='other'>Other</label>
+                        </div>
                     </div>
                     <div className='dob-appointment position'>
                         <label htmlFor='DOB'>Date of Birth</label>
@@ -205,12 +242,19 @@ const Appointment = () => {
                             name="appointmentTime"
                             value={patient.appointmentTime}
                             onChange={handleChange}
-                            min="10:00"
-                            max="18:00"
+                            min={availableHours.start}
+                            max={availableHours.end}
                             required
                         />
                     </div>
-                    {message !== null ? <p className='success-message'>{message}</p> : null}
+                    {message !== null ?
+                        <div>
+                            <p className='success-message'>{message}</p>
+                            <p onClick={handleRedirect} className='redirect-to-home'>Go to Home Page</p>
+                        </div>
+                        : null
+                    }
+
                     <button className='book-button' disabled={loading}>
                         {loading ? 'Booking...' : 'Book'}
                     </button>

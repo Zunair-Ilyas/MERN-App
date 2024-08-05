@@ -1,0 +1,148 @@
+.member-form{
+    margin: 50px 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.level-one, .level-two, .level-three{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.member-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.gender-input{
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    height: 20px;
+    gap: 0;
+    /*border: 1px solid #d3d3d3;*/
+}
+.member-input input{
+    background-color: #c5c5c5;
+    width: 350px;
+    padding: 16px;
+    border-radius: 16px;
+    color: black;
+}
+.member-input input::placeholder{
+    color: #777777;
+}
+.specialization-input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*gap: 100px;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.specialization-input select{
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 5px;
+}
+.address-input{
+    align-self: flex-start;
+    width: 100%;
+}
+.address-input textarea{
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 12px;
+}
+.availableHours-input{
+    display: flex;
+}
+.from, .to{
+    display: flex;
+    flex-direction: column;
+}
+.time{
+    display: flex;
+    gap: 40px;
+}
+.availableHours-input-title{
+    color: black;
+}
+.languages-input{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 40px;
+}
+.languages-input-container{
+    display: flex;
+    flex-direction: column;
+}
+.language-button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    width: 150px;
+    align-self: center;
+    margin-top: 20px;
+}
+.language-button:active{
+    background-color: #ff7a7a;
+}
+.member-submit-button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    width: 420px;
+}
+.member-submit-button:active{
+    background-color: #ff7a7a;
+}
+.profilePic-input{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.languages-input ul li{
+    font-family: Lexend, sans-serif;
+}
+.success-message{
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    padding: 10px;
+    color: darkgreen;
+    font-weight: normal;
+}
+.join-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.join-us-para{
+    font-size: 56px;
+    font-family: Lexend, sans-serif;
+    text-align: center;
+}
+.join-us-button{
+    background-color: #ff5a5a;
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    width: 300px;
+}
+.join-us-button:active{
+    background-color: #ff7a7a;
+}
+.you-are-member{
+    font-size: 56px;
+    font-family: Lexend, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}

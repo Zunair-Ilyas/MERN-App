@@ -70,13 +70,11 @@ body {
     align-items: center;
     width: 200%;
     margin-top: 20px;
-    /*border: 1px solid black;*/
 }
 
 .detail .number {
     color: gray;
     margin-bottom: 10px;
-    /*border: 1px solid black;*/
 }
 
 .detail .see-more {
@@ -84,7 +82,6 @@ body {
     font-style: italic;
     cursor: pointer;
     transition: color 0.3s;
-    /*border: 1px solid black;*/
 }
 
 .see-more:hover {
@@ -118,24 +115,119 @@ body {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+.empty-home {
+    font-size: 32px;
+    font-family: Lexend, sans-serif;
+    padding-top: 50px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .bookings {
+        margin-left: 60px;
+        gap: 40px;
+    }
+
     .box1 {
         width: 90%;
         height: auto;
-        padding: 20px;
     }
 
     .search-bar {
         width: 80%;
+        margin: 0 20px;
     }
 
     .search-bar:hover {
         width: 85%;
     }
+
+    .category {
+        font-size: 16px;
+    }
+
+    .detail .number {
+        font-size: 14px;
+    }
+
+    .detail .see-more {
+        font-size: 14px;
+    }
+
+    .empty-home {
+        font-size: 28px;
+    }
 }
-.empty-home{
-    font-size: 32px;
-    font-family: Lexend, sans-serif;
-    padding-top: 50px;
-    text-align: center;
+
+@media (max-width: 768px) {
+    .bookings {
+        margin-left: 20px;
+        gap: 20px;
+    }
+
+    .box1 {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+
+    .search-bar:hover {
+        width: 95%;
+    }
+
+    .category {
+        font-size: 14px;
+    }
+
+    .detail .number {
+        font-size: 12px;
+    }
+
+    .detail .see-more {
+        font-size: 12px;
+    }
+
+    .empty-home {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bookings {
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .box1 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar:hover {
+        width: 100%;
+    }
+
+    .category {
+        font-size: 12px;
+    }
+
+    .detail .number {
+        font-size: 10px;
+    }
+
+    .detail .see-more {
+        font-size: 10px;
+    }
+
+    .empty-home {
+        font-size: 20px;
+    }
 }

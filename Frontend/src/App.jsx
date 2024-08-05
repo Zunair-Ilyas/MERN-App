@@ -10,11 +10,14 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 import CategoryPage from './Components/CategoryPage.jsx'
 import Doctor from "./Components/Doctor.jsx";
 import Appointment from "./Components/Appointment.jsx";
+import NotFound from "./Components/NotFound.jsx";
+import WelcomePage from "./Components/WelcomePage.jsx";
 
 function App() {
   return (
     <Router>
         <Routes>
+            <Route path="/" element={<WelcomePage />} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/home" element={
@@ -52,6 +55,7 @@ function App() {
                     <Appointment />
                 </PrivateRoute>
             } />
+            <Route path="*" element={<NotFound/>} />
         </Routes>
     </Router>
   )
