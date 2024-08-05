@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('token'));
     const getUser = async () => {
         try {
-            const response = await axios.get('https://www.doctor-and-doctor.com/user', {
+            const response = await axios.get('https://d-and-d-backend.vercel.app/user', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

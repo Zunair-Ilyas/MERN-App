@@ -11,7 +11,7 @@ const CategoryPage = () => {
     const navigate = useNavigate();
     const getData = async () => {
         try {
-            const response = await axios.get(`https://www.doctor-and-doctor.com/home/${categoryName}`)
+            const response = await axios.get(`https://d-and-d-backend.vercel.app/home/${categoryName}`)
             setData(response.data)
         } catch (e) {
             console.log(e)

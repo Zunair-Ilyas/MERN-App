@@ -123,7 +123,7 @@ const Members = () => {
 
     const checkMembershipStatus = async () => {
         try {
-            const response = await axios.get('https://www.doctor-and-doctor.com/members', {
+            const response = await axios.get('https://d-and-d-backend.vercel.app/members', {
                 params: { email: localStorage.getItem('userEmail') }
             });
             setIsMember(response.data._id.length > 0);

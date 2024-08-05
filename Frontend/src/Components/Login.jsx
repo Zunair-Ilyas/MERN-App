@@ -40,7 +40,7 @@ const Login = () => {
         }
         setLoading(true);
         try {
-            const response = await axios.post('https://www.doctor-and-doctor.com/Login', data);
+            const response = await axios.post('https://d-and-d-backend.vercel.app/Login', data);
             const { token, message} = response.data;
             const { firstName, lastName, email} = response.data.user
             localStorage.setItem('token', token);

@@ -39,7 +39,7 @@ function Register() {
         }
         setLoading(true);
         try {
-            const response = await axios.post('https://www.doctor-and-doctor.com/Register', data);
+            const response = await axios.post('https://d-and-d-backend.vercel.app/Register', data);
             const { token } = response.data;
             localStorage.setItem('token', token);
             setData({

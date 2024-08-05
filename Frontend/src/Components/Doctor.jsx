@@ -12,7 +12,7 @@ const Doctor = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get(`https://www.doctor-and-doctor.com/home/${categoryName}/${id}`);
+            const response = await axios.get(`https://d-and-d-backend.vercel.app/home/${categoryName}/${id}`);
             setData(response.data);
             console.log(response.data);
         } catch (e) {

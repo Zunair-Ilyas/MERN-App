@@ -15,7 +15,7 @@ const Home = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get('https://www.doctor-and-doctor.com/categories', {
+            const response = await axios.get('https://d-and-d-backend.vercel.app/categories', {
                 params: {
                     search: searchTerm
                 }
@@ -29,7 +29,7 @@ const Home = () => {
 
     const getDoctors = async () => {
         try {
-            const response = await axios.get('https://www.doctor-and-doctor.com/doctors');
+            const response = await axios.get('https://d-and-d-backend.vercel.app/doctors');
             setDoctors(response.data);
         } catch (e) {
             console.log(e);

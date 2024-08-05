@@ -32,7 +32,7 @@ const Bookings = () => {
 
     const handleClick = async (id) => {
         try {
-            const response = await axios.delete(`https://www.doctor-and-doctor.com/bookings/${id}`);
+            const response = await axios.delete(`https://d-and-d-backend.vercel.app/bookings/${id}`);
             console.log(response);
             setBookingData(prevData => prevData.filter(booking => booking._id !== id));
         } catch (e) {

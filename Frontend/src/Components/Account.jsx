@@ -16,7 +16,7 @@ const Account = () => {
     }
     const getData = async () => {
         try {
-            const response = await axios.get('https://www.doctor-and-doctor.com/members', {
+            const response = await axios.get('https://d-and-d-backend.vercel.app/members', {
                 params: {
                     email: localStorage.getItem('userEmail'),
                 }
