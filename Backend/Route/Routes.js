@@ -18,6 +18,9 @@ const AddMember = require('../Controllers/AddMember')
 const DoctorProfile = require('../Controllers/DoctorProfile')
 const AllDoctor = require('../Controllers/AllDoctor')
 
+router.route('/').get((req, res) => {
+    res.send('Hello World');
+});
 router.route('/Register').post(UserExists, register)
 router.route('/Login').post(AuthenticateUser, login)
 router.route('/home').get(AuthenticateToken, data)
