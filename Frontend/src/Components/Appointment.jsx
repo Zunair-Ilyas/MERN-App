@@ -62,7 +62,7 @@ const Appointment = () => {
     };
 
 // Example usage:
-    console.log(parseAvailableHours("2:25 PM to 3:25 PM")); // { start: '14:25', end: '15:25' }
+    console.log(parseAvailableHours("2:25 PM to 3:25 PM"));
 
 
     const availableHours = parseAvailableHours(data.availableHours);
@@ -78,7 +78,7 @@ const Appointment = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:3010/home/${data.specialization}/${data._id}/appointment`, patient);
+            const response = await axios.post(`https://www.doctor-and-doctor.com/home/${data.specialization}/${data._id}/appointment`, patient);
             setPatient({
                 firstName: '',
                 lastName: '',

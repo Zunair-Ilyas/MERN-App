@@ -12,7 +12,7 @@ const Doctor = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get(`http://localhost:3010/home/${categoryName}/${id}`);
+            const response = await axios.get(`https://www.doctor-and-doctor.com/home/${categoryName}/${id}`);
             setData(response.data);
             console.log(response.data);
         } catch (e) {

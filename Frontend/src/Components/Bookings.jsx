@@ -9,7 +9,7 @@ const Bookings = () => {
 
     const getData = async () => {
         try {
-            const { data } = await axios.get('http://localhost:3010/bookings', {
+            const { data } = await axios.get('https://www.doctor-and-doctor.com/bookings', {
                 params: {
                     email: localStorage.getItem('userEmail')
                 }
@@ -32,7 +32,7 @@ const Bookings = () => {
 
     const handleClick = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:3010/bookings/${id}`);
+            const response = await axios.delete(`https://www.doctor-and-doctor.com/bookings/${id}`);
             console.log(response);
             setBookingData(prevData => prevData.filter(booking => booking._id !== id));
         } catch (e) {

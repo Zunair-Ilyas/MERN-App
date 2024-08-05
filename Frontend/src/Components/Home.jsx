@@ -15,7 +15,7 @@ const Home = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get('http://localhost:3010/categories', {
+            const response = await axios.get('https://www.doctor-and-doctor.com/categories', {
                 params: {
                     search: searchTerm
                 }
@@ -29,7 +29,7 @@ const Home = () => {
 
     const getDoctors = async () => {
         try {
-            const response = await axios.get('http://localhost:3010/doctors');
+            const response = await axios.get('https://www.doctor-and-doctor.com/doctors');
             setDoctors(response.data);
         } catch (e) {
             console.log(e);

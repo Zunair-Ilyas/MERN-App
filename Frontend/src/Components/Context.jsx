@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('token'));
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:3010/user', {
+            const response = await axios.get('https://www.doctor-and-doctor.com/user', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

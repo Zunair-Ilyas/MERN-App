@@ -16,7 +16,7 @@ const Account = () => {
     }
     const getData = async () => {
         try {
-            const response = await axios.get('http://localhost:3010/members', {
+            const response = await axios.get('https://www.doctor-and-doctor.com/members', {
                 params: {
                     email: localStorage.getItem('userEmail'),
                 }
