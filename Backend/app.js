@@ -9,7 +9,11 @@ const path = require('path')
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors())
+app.use(cors({
+    origin: ['https://d-and-d-nine.vercel.app/'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}))
 app.use('/', routes)
 
 
