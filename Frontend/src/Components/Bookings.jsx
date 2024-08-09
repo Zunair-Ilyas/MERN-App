@@ -9,7 +9,7 @@ const Bookings = () => {
 
     const getData = async () => {
         try {
-            const { data } = await axios.get('https://d-and-d-backend.vercel.app//bookings', {
+            const { data } = await axios.get('https://d-and-d-backend.vercel.app/bookings', {
                 params: {
                     email: localStorage.getItem('userEmail')
                 }
